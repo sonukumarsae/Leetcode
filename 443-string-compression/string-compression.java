@@ -1,9 +1,5 @@
 class Solution {
     public int compress(char[] chars) {
-        //StringBuilder sb=new StringBuilder("");
-        if(chars.length==1){
-            return 1;
-        }
         int j=0;
         for(int i=0;i<chars.length;i++){
             char curr=chars[i];
