@@ -1,14 +1,18 @@
 class Solution {
-    static class Pair{
+    static class Pair implements Comparable<Pair>{
         int x;
         int y;
         public Pair(int x,int y){
             this.x=x;
             this.y=y;
         }
+        @Override
+        public int compareTo(Pair P1){
+            return Integer.compare(y,P1.y);
+        }
     }
     public int findMinArrowShots(int[][] points) {
-      PriorityQueue<Pair> pq=new PriorityQueue<>((a,b)->Integer.compare(a.y,b.y));
+      PriorityQueue<Pair> pq=new PriorityQueue<>();
       for(int point[]:points){
         pq.add(new Pair(point[0],point[1]));
       } 
